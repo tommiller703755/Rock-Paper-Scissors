@@ -62,9 +62,9 @@ function playRound(humanChoice, computerChoice) {
             console.log("It's a tie!");
         }
     }
-
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-    playRound(humanChoice, computerChoice);
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
