@@ -7,7 +7,7 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    let computerChoice = Math.random() * (3 - 1) + 1;
+    let computerChoice = Math.floor(Math.random() * 3) + 1;
 
     if (computerChoice == 1) {
         return "rock";
@@ -64,7 +64,20 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
 
-playRound(humanChoice, computerChoice);
+    playRound(humanSelection, computerSelection);
+    if (humanScore >= 5) {
+        console.log("The Player has won the entire game!");
+        return;
+    } else if (computerScore >= 5) {
+        console.log("The Computer has won the entire game!");
+        return;
+    }
+
+    playGame();
+}
+
+playGame();
