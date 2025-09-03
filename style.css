@@ -1,3 +1,4 @@
+/* id style rules */
 #game {
     display: flex;
     flex-direction: column;
@@ -10,6 +11,18 @@
     justify-content: space-around;
 }
 
+#scores {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 48px;
+}
+
+/* class style rules */
+.score {
+    font-size: 48px;
+}
+
+/* type style rules */
 button {
     background-color: lightblue;
     color: black;
