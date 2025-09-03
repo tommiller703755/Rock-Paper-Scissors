@@ -6,7 +6,7 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const playerScoreDisplay = document.getElementById("player-score");
+const humanScoreDisplay = document.getElementById("player-score");
 const computerScoreDisplay = document.getElementById("computer-score");
 
 function getComputerChoice() {
@@ -34,18 +34,20 @@ function playRound(humanChoice, computerChoice) {
         if (computerChoice == "scissors") {
             console.log("The computer won!");
             computerScore++;
-            computerScoreDisplay.appendChild(document.createTextNode(purseInt(computerSCore)));
+            //computerScoreDisplay.appendChild(document.createTextNode(parseInt(computerSCore)));
+            computerScoreDisplay.textContent = parseInt(computerScore);
         }
         if (computerChoice == "paper") {
             console.log("The player won!");
             humanScore++;
-            playerScoreDisplay.appendChild(document.createTextNode(parseInt(humanScore)));
+            //humanScoreDisplay.appendChild(document.createTextNode(parseInt(humanScore)));
+            humanScoreDisplay.textContent = parseInt(humanScore);
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
             console.log("The player won!");
             humanScore++;
-            playerScoreDisplay.appendChild(document.createTextNode(parseInt(humanScore)));
+            humanScoreDisplay.textContent = parseInt(humanScore);
         }
         if (computerChoice == "paper") {
             console.log("It's a tie!");
@@ -53,18 +55,18 @@ function playRound(humanChoice, computerChoice) {
         if (computerChoice == "scissors") {
             console.log("The computer won!");
             computerScore++;
-            computerScoreDisplay.appendChild(document.createTextNode(purseInt(computerSCore)));
+            computerScoreDisplay.textContent = parseInt(computerScore);
         }
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
             console.log("The computer won!");
             computerScore++;
-            computerScoreDisplay.appendChild(document.createTextNode(purseInt(computerSCore)));
+            computerScoreDisplay.textContent = parseInt(computerScore);
         }
         if (computerChoice == "paper") {
             console.log("The player won!");
             humanScore++;
-            playerScoreDisplay.appendChild(document.createTextNode(parseInt(humanScore)));
+            humanScoreDisplay.textContent = parseInt(humanScore);
         }
         if (computerChoice == "scissors") {
             console.log("It's a tie!");
@@ -85,8 +87,6 @@ function playGame(choice) {
         console.log("The Computer has won the entire game!");
         return;
     }
-
-    playGame();
 }
 
 // Get the button objects
